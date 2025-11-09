@@ -244,3 +244,18 @@ footer {
     margin-left: 0.75rem;
   }
 }
+/* Interactive styling for cards and team members */
+.card {
+  cursor: pointer;
+}
+.card.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.05);
+}
+.card.active h3 {
+  color: #ffffff;
+}
+.team-member {
+  cursor: pointer;
+}
