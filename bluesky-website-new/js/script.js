@@ -1,6 +1,6 @@
 /*
  * JavaScript for the BlueSky website.
- * Handles contact form submission and adds interactivity to the team page.
+ * Handles contact form submission and adds interactivity to cards and team pages.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -17,18 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Interactive team cards: toggle description visibility on click
+  // Interactive team cards: toggle description visibility and active styling on click
   const teamCards = document.querySelectorAll('.team-member');
   teamCards.forEach(card => {
     const description = card.querySelector('p');
     card.addEventListener('click', () => {
       if (description) {
-        if (description.style.display === 'none' || description.style.display === '') {
-          description.style.display = 'block';
-        } else {
-          description.style.display = 'none';
-        }
+        const isHidden = description.style.display === 'none' || description.style.display === '';
+        description.style.display = isHidden ? 'block' : 'none';
       }
+      card.classList.toggle('active');
+    });
+  });
+
+  // Generic interactive cards: toggle active styling on click
+  const allCards = document.querySelectorAll('.card');
+  allCards.forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('active');
     });
   });
 });
