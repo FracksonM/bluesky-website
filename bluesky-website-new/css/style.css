@@ -274,6 +274,24 @@ footer {
   transform: scale(1.1);
 }
 
+/* Slide-out contact widget icons */
+#contact-widget .contact-icon {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#contact-widget:hover .contact-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ensure first icon always visible */
+#contact-widget .contact-icon:first-child {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 }
 /* Interactive styling for cards and team members */
 .card {
